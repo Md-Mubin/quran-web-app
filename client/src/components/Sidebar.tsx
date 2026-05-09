@@ -16,7 +16,7 @@ const Sidebar = ({ className = "" }) => {
         <aside className={`hidden laptop:flex max-w-83.25 border-r-2 border-[#171717] h-screen flex-col pt-6 space-y-4 ${className}`}>
             {/* Tab bar */}
             <div className="flex gap-1 bg-[#171717] rounded-full p-1 mx-6.5">
-                {tabs.map((tab) => (
+                {tabs?.map((tab) => (
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}

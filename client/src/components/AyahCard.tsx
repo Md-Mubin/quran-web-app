@@ -57,7 +57,7 @@ const AyahCard = ({ ayah, isPlaying, activeWordId, onPlayToggle, onPlayWord }: A
       <div className="flex flex-col w-full max-w-full">
         <p className={`text-right mb-6 ${arabicFont} flex flex-wrap`}
           style={{ fontSize: arabicSize }} dir="rtl">
-          {ayah.wbws.map((wbw: any) => (
+          {ayah.wbws?.map((wbw: any) => (
             <span key={wbw.wordId} onClick={() => onPlayWord(wbw)} title={wbw.translation}
               className={`cursor-pointer transition-colors duration-100
                 ${activeWordId === wbw.wordId ? "text-emerald-400" : "text-white hover:text-emerald-300"}`}>

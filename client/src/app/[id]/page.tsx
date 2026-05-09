@@ -18,7 +18,7 @@ export default async function SurahPage({ params }: { params: Promise<{ id: stri
 
   // Build a map of verse_key → VerseTiming for O(1) lookup
   const timingMap = Object.fromEntries(
-    audioFile.verse_timings.map(vt => [vt.verse_key, vt])
+    audioFile.verse_timings?.map(vt => [vt.verse_key, vt])
   );
 
   const surahHeading: any = allSurah.find((s: any) => s.surahId === surahId);

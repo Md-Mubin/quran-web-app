@@ -26,7 +26,7 @@ const SearchBar = ({ ayahs }: searchBarProps) => {
                 onChange={(e: any) => setSearch(e.target.value)}
             />
             <div>
-                {filtered.map((a: any) => (
+                {filtered?.map((a: any) => (
                     <div key={a.number}>
                         {a.translation}
                     </div>

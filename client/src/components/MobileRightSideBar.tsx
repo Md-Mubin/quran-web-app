@@ -23,7 +23,7 @@ const MobileRightSideBar = ({ open, onClose }: any) => {
 
           {/* Tab switcher */}
           <div className="flex bg-[#171717] rounded-full p-1">
-            {(["Translation", "Reading"] as Tab[]).map(t => (
+            {(["Translation", "Reading"] as Tab[])?.map(t => (
               <button
                 key={t}
                 onClick={() => setTab(t)}

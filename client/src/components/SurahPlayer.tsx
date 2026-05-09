@@ -111,7 +111,7 @@ export default function SurahPlayer({ ayahs, audioFile, timingMap }: Props) {
 
     return (
         <>
-            {ayahs.map((ayah: any) => (
+            {ayahs?.map((ayah: any) => (
                 <AyahCard
                     key={ayah.ayahId}
                     ayah={ayah}
