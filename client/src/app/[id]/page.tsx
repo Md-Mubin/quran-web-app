@@ -8,20 +8,36 @@ export default async function SurahPage({ params }: { params: Promise<{ id: stri
   const { id } = await params;
   const surahId = Number(id);
 
+  if (Number.isNaN(surahId)) {
+    throw new Error("Invalid surah id");
+  }
+
   const [surahRes, audioRes] = await Promise.all([
     fetchSurah({ surahId, languageId: "en", translations: ["23"], cursor: 0, script: "uthmani" }),
     fetchAudio(surahId),
   ]);
+
+  if (!surahRes?.data) {
+    throw new Error("Surah API failed");
+  }
+
+  if (!audioRes?.data) {
+    throw new Error("Audio API failed");
+  }
 
   const surah = surahRes.data;
   const audioFile = audioRes.data;
 
   // Build a map of verse_key → VerseTiming for O(1) lookup
   const timingMap = Object.fromEntries(
-    audioFile.verse_timings?.map(vt => [vt.verse_key, vt])
+    (audioFile.verse_timings ?? []).map(vt => [vt.verse_key, vt])
   );
 
-  const surahHeading: any = allSurah.find((s: any) => s.surahId === surahId);
+  const surahHeading = allSurah.find((s: any) => s.surahId === surahId);
+
+  if (!surahHeading) {
+    throw new Error(`Surah metadata not found for id: ${surahId}`);
+  }
 
   return (
     <main className="flex h-screen w-full">
