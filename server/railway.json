@@ -3,7 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "npm run build && npm start",
-    "healthcheckPath": "/health"
+    "startCommand": "npm run build && npm start"
   }
 }
