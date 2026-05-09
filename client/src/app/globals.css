@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* VS Code-like dark theme base */
+:root {
+  --background: #0d0d0d;
+  --foreground: #ededed;
+  --sidebar: #171717;
+  --sidebar-border: #171717;
+  --main-bg: #0d0d0d;
+}
+
+@theme{
+  /* breakpoints */
+  --breakpoint-desktop: 1440px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-tablet: 768px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-amiri), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sideNavbar::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+
+.sideNavbar::-webkit-scrollbar-thumb {
+  background-color: #42803833;
+  border-radius: 4px;
+}
+
+.ayahScrollBar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.images {
+  filter: invert(1) sepia(1) hue-rotate(178deg);
+}

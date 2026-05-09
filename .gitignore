@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Build output
+dist/
+build/
+
+# Next.js
+.next/
+**/.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Coverage
+coverage/
+# Environment files
+.env
+.env.*
+.env.save
+
+# pnpm
+pnpm-lock.yaml
